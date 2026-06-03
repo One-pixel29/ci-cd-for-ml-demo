@@ -1,0 +1,28 @@
+# This a basic workflow to help with getting started with Actions
+
+# Name of the worflow |
+name: CI
+
+# Controls when the worklow will run
+on: 
+
+ #Triggers the workflow on push events but only for the "main" branch
+ push:
+   branches: [ "main" ]
+ 
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+   # The type type of runner that the job will run on
+   runs-on: ubuntu-latest
+
+   # Steps represent a sequence of task that will be executed as part of the job
+   steps:
+    # Runs a set of commandsusing the runners shell
+     - name: Run a multi-line script
+       run: |
+         echo Hello, World
+         echo Add other actions to build,
+         echo test, and deploy your project
