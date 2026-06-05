@@ -21,6 +21,12 @@ jobs:
    # Steps represent a sequence of task that will be executed as part of the job
    steps:
     # Runs a set of commandsusing the runners shell
+     - name: Checkout
+       uses: actions/checkout@v3
+     - name: Setup Python
+       uses: actions/setup-python@v4
+       with:
+         python-version : 3.9
      - name: Run a multi-line script
        run: |
          echo Hello, World
