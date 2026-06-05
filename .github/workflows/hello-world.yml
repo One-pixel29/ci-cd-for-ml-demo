@@ -7,7 +7,7 @@ name: CI
 on: 
 
  #Triggers the workflow on push events but only for the "main" branch
- push:
+ pull_request:
    branches: [ "main" ]
  
 
@@ -21,6 +21,12 @@ jobs:
    # Steps represent a sequence of task that will be executed as part of the job
    steps:
     # Runs a set of commandsusing the runners shell
+     - name: Checkout
+       uses: actions/checkout@v3
+     - name: Setup Python
+       uses: actions/setup-python@v4
+       with:
+         python-version : 3.9
      - name: Run a multi-line script
        run: |
          echo Hello, World
